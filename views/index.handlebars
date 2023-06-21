@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1b3e6a',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-white py-20">
+
+  <div class="container m-auto">
+    <header class="flex justify-between item-center ">
+      <img class="w-60" src="https://resonant-muffin-db8e5c.netlify.app/assets/img/logo.svg" alt="logo">
+      <h1 class="text-2xl text-primary">NWT Business Development and <br> Investment Corporation</h1>
+    </header>
+
+    <div class="flex justify-between item-center mt-20">
+      <div>
+        <h4 class="text-2xl text-primary ">{{title}}</h4>
+        <p class="mb-20">All records filled by user</p>
+      </div>
+      <p>{{applicationCode}}</p>
+    </div>
+
+    <div>
+      {{#each entries}}
+
+      {{#if entry}}
+      <!-- Render content for all but the last three elements -->
+      <div>
+
+        <div class="mt-10"> {{ title }} </div>
+
+        <div class="text-primary text-lg\ ">{{ entry }} </div>
+      </div>
+      {{/if}}
+
+      {{/each}}
+    </div>
+    {{#if (eq type "psfa")}}
+    <div class="mt-10">
+      <p>I the undersigned hereby declare that all information provided herein is true, complete and correct, to the
+        best of my knowledge.
+
+        I understand that the information contained herein may be used by the NWT Business Development & Investment
+        Corporation (“BDIC”) to determine program eligibility.
+
+        I further consent to the BDIC making any credit and general inquiries necessary in relation to this application
+        and to the disclosure of any credit information about me, to any credit reporting agency, organization or person
+        with whom I have a financial relationship. This is to include the GNWT Department of Finance.</p>
+      <div class=" mt-10 ">
+        <p>The User Consented </p>
+        <p>{{name}}</p>
+        <p>{{date}}</p>
+      </div>
+    </div>
+    {{/if}}
+
+
+    {{!-- <div class="grid grid-cols-2">
+      {{#each entries}}
+
+      {{#if entry}}
+      <div class="mt-10">
+
+        <div> {{ title }} </div>
+
+        <div class="text-primary text-2xl ">{{ entry }} </div>
+      </div>
+      {{/if}}
+
+      {{/each}}
+    </div> --}}
+
+
+
+
+
+
+    {{!-- {{{body}}} --}}
+
+
+
+
+
+  </div>
+
+
+
+</body>
+
+</html>
