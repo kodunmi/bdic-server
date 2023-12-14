@@ -222,7 +222,10 @@ const upload = multer({ dest: "uploads/" });
 async function generatePDF(data) {
   const html = template(data);
 
-  const browser = await puppeteer.launch();
+  const browser = await puppetteer.launch({
+   headless: true,
+   args: ['--no-sandbox']
+})
   const page = await browser.newPage();
 
   await page.setContent(html, { waitUntil: "networkidle0" });
